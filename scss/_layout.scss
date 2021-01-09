@@ -16,12 +16,25 @@
 }
 
 .creations {
+	position: relative;
+	margin-bottom: 6rem;
 	&__top {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding-top: 2rem;
 		padding-bottom: 2rem;
+
+		@media only screen and (max-width: 480px) {
+			.btn {
+				position: absolute;
+				bottom: -10%;
+				left: 0;
+				right: 0;
+				margin: auto;
+				text-align: center;
+			}
+		}
 	}
 }
 

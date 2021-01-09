@@ -77,7 +77,12 @@
 		border: 0.2rem solid $secondary-color;
 
 		@include breakpoint-up(medium) {
-			max-width: 60%;
+			display: inline-block;
+			max-width: 50%;
+
+			h1 {
+				font-size: 5rem;
+			}
 		}
 		@include breakpoint-up(large) {
 			max-width: 40%;
@@ -203,6 +208,10 @@
 		font-size: 1.35rem;
 		letter-spacing: 0.1rem;
 		text-align: center;
+	}
+
+	p {
+		margin: 2.8rem 0;
 	}
 
 	&__link {
