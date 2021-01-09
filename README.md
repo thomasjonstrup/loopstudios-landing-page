@@ -1,5 +1,9 @@
 # Frontend Mentor - Loopstudios landing page
 
+Solution made with HTML5 & SCSS
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2b9b60a4-779e-4da5-90b1-e24a0d2815f0/deploy-status)](https://app.netlify.com/sites/loopstudios-landing-page/deploys)
+
 ![Design preview for the Loopstudios landing page coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
