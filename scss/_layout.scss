@@ -1,0 +1,52 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* h1 {
+	line-height: 3.5rem;
+} */
+
+@use "sass:math" as math;
+
+// Flexbox display
+@mixin flexbox {
+	display: flex;
+}
+
+.creations {
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+}
+
+.interactive {
+	padding: 5rem 2.35rem 0;
+
+	&.grid {
+		grid-template-columns: repeat(1, 1fr);
+
+		@include breakpoint-up(small) {
+			grid-template-columns: 60% 38%;
+			gap: 0;
+		}
+	}
+
+	.heading {
+		font-size: 3.2rem;
+	}
+
+	.text {
+		background-color: $secondary-color;
+
+		@include breakpoint-up(small) {
+			margin: 8rem 2rem 2rem -8rem;
+			padding: 5rem;
+		}
+	}
+}

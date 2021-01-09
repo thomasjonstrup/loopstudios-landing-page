@@ -1,0 +1,261 @@
+/// Button component
+
+.btn {
+	display: inline-block;
+	/* border-radius: 0.4rem; */
+	padding: 0.75rem 3rem;
+	outline: none;
+	/* 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); */
+	transition: all 0.23s ease-in-out;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+
+	@include modifier("outline") {
+		background-color: transparent;
+		border: 0.2rem solid $primary-color;
+
+		&:hover {
+			background-color: $primary-color;
+			color: $secondary-color;
+		}
+	}
+
+	// Buttons sizes
+	@include modifier("small") {
+		font-size: 1rem;
+	}
+	@include modifier("large") {
+		font-size: 1.6rem;
+	}
+
+	@include modifier("bordered-primary") {
+		background: #fff;
+		border: 1px solid #496ee8;
+		color: #496ee8;
+	}
+
+	@include modifier("primary") {
+		background-color: $soft-red;
+		color: $primary-color;
+
+		&:hover {
+			color: $soft-red;
+			background-color: #fff;
+			border: solid $soft-red 1px;
+		}
+	}
+}
+
+.heading {
+	text-transform: uppercase;
+}
+
+.description {
+	font-family: $font-family-secondary;
+	color: $very-dark-grey;
+}
+
+// Header
+.header {
+	background-image: url("../images/mobile/image-hero.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 90vh;
+	color: $secondary-color;
+
+	padding: 6rem 4rem 6rem 4rem;
+
+	@include breakpoint-up(medium) {
+		background-image: url("../images/desktop/image-hero.jpg");
+	}
+
+	&__box {
+		padding: 2rem;
+
+		margin: 10rem 0 2rem 0;
+		border: 0.2rem solid $secondary-color;
+
+		@include breakpoint-up(medium) {
+			max-width: 60%;
+		}
+		@include breakpoint-up(large) {
+			max-width: 40%;
+		}
+	}
+
+	.container {
+		padding: 0 1rem;
+
+		@include breakpoint-up(medium) {
+			padding: 0 4rem;
+		}
+	}
+}
+
+// Nav
+.nav {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+	line-height: 1.3rem;
+
+	&__menu {
+		display: none;
+
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		@media only screen and (min-width: 767px) {
+			display: flex;
+		}
+	}
+
+	&__item {
+		color: $secondary-color;
+		width: 90%;
+		font-weight: bold;
+		text-align: center;
+		padding: 0 1.5rem;
+	}
+
+	&__link {
+		width: 100%;
+		color: $secondary-color;
+
+		&:hover {
+			border-bottom: 0.2rem solid $secondary-color;
+		}
+	}
+
+	&__logo {
+		width: 14.4rem;
+		img {
+			cursor: pointer;
+		}
+	}
+
+	&__hamburger {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		height: 2rem;
+
+		@include breakpoint-up(medium) {
+			display: none;
+		}
+
+		span {
+			display: block;
+			width: 28px;
+			height: 3.5px;
+			background-color: $primary-color;
+			-webkit-transition: all 0.2s;
+			transition: all 0.2s;
+		}
+	}
+}
+
+// Footer
+.footer {
+	background-color: $primary-color;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	color: $secondary-color;
+
+	.flex {
+		flex-direction: column;
+
+		@include breakpoint-up(medium) {
+			flex-direction: row;
+		}
+	}
+
+	&__menu {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+
+		@include breakpoint-up(medium) {
+			flex-direction: row;
+		}
+	}
+
+	&__socials {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__item {
+		color: $secondary-color;
+		font-weight: bold;
+		text-align: center;
+		padding: 0 1.5rem;
+
+		margin: 2.8rem 0;
+		font-size: 1.35rem;
+		letter-spacing: 0.1rem;
+		text-align: center;
+	}
+
+	&__link {
+		color: $secondary-color;
+
+		&:hover {
+			border-bottom: 0.2rem solid $secondary-color;
+		}
+	}
+}
+
+// Checkboxes
+.checkbox {
+	position: relative;
+	display: inline-block;
+
+	@include element("input") {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+
+		&:checked + .checkbox__label {
+			background-color: $soft-red;
+			border-color: transparent;
+		}
+	}
+
+	@include element("label") {
+		display: flex;
+		align-items: center;
+		width: 5rem;
+		height: 3rem;
+		cursor: pointer;
+		background-color: $primary-color;
+		border: 1px solid;
+		border-color: $cb_border-color;
+		border-radius: 25px;
+		transition: all 0.4s ease;
+	}
+
+	@include element("marker") {
+		display: block;
+		width: 2.6rem;
+		height: 2.6rem;
+		background-color: $primary-color;
+		border-radius: 50%;
+		transform: translateX(0.1rem);
+		transition: all 0.15s ease;
+		box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+	}
+
+	&__input:checked + &__label &__marker {
+		box-shadow: -2px 4px 6px rgba(0, 0, 0, 0.15);
+		transform: translateX(2.2rem);
+	}
+}
