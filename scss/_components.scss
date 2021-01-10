@@ -120,6 +120,40 @@
 	align-items: center;
 	line-height: 1.3rem;
 
+	.mobile-menu {
+		&__top {
+			display: none;
+			padding: 2rem 2rem;
+		}
+
+		&.is-open {
+			display: block;
+
+			position: absolute;
+			flex-direction: column;
+			background-color: $primary-color;
+			right: 0;
+			z-index: 3;
+			top: 0;
+			height: 100vh;
+			width: 100%;
+			justify-content: space-evenly;
+			align-items: center;
+			transition: all 0.5s;
+			padding: 6rem 2rem 6rem 2rem;
+
+			.nav__menu {
+				display: block;
+			}
+
+			.mobile-menu__top {
+				display: flex;
+				justify-content: space-between;
+				flex-direction: row;
+			}
+		}
+	}
+
 	&__menu {
 		display: none;
 
@@ -135,9 +169,18 @@
 	&__item {
 		color: $secondary-color;
 		width: 90%;
-		font-weight: bold;
-		text-align: center;
-		padding: 0 1.5rem;
+		text-align: left;
+		padding: 2rem 1.5rem;
+		font-size: 2.2rem;
+		text-transform: uppercase;
+
+		@include breakpoint-up(medium) {
+			font-weight: bold;
+			text-align: center;
+			padding: 0 1.5rem;
+			font-size: 1.6rem;
+			text-transform: inherit;
+		}
 	}
 
 	&__link {
