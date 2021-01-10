@@ -20,7 +20,7 @@
 	margin-bottom: 6rem;
 	&__top {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 		padding-top: 2rem;
 		padding-bottom: 2rem;
@@ -28,12 +28,24 @@
 		@media only screen and (max-width: 480px) {
 			.btn {
 				position: absolute;
-				bottom: -10%;
+				bottom: 0;
 				left: 0;
 				right: 0;
 				margin: auto;
 				text-align: center;
 			}
+		}
+
+		@include breakpoint-up(medium) {
+			justify-content: space-between;
+		}
+	}
+
+	.grid {
+		padding-bottom: 6rem;
+
+		@include breakpoint-up(medium) {
+			padding-bottom: 2rem;
 		}
 	}
 }
